@@ -1,4 +1,4 @@
-import type { Address } from '@newrails/stablecoin-contracts';
+import type { Address } from '@newrailsuab/stablecoin-contracts';
 
 export type { Address };
 export type Hex = `0x${string}`;
