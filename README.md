@@ -15,21 +15,21 @@ A few things make this a natural fit for Monad specifically:
 
 | Package | Description | Status |
 | --- | --- | --- |
-| [`@newrails/stablecoin-contracts`](./packages/contracts) | ABI + per-chain deployment registry | Skeleton, usable |
-| [`@newrails/stablecoin-core`](./packages/core) | Read/write, EIP-712 authorization signing, permit, typed errors, preflight, event subscriptions | Skeleton, usable |
+| [`@newrailsuab/stablecoin-contracts`](./packages/contracts) | ABI + per-chain deployment registry | Skeleton, usable |
+| [`@newrailsuab/stablecoin-core`](./packages/core) | Read/write, EIP-712 authorization signing, permit, typed errors, preflight, event subscriptions | Skeleton, usable |
 
 ## Installation
 
 ```bash
-npm install @newrails/stablecoin-core viem
+npm install @newrailsuab/stablecoin-core viem
 ```
 
-`@newrails/stablecoin-contracts` (ABI + address registry) is pulled in automatically; install `viem` too, since you import from it directly (e.g. `viem/accounts`).
+`@newrailsuab/stablecoin-contracts` (ABI + address registry) is pulled in automatically; install `viem` too, since you import from it directly (e.g. `viem/accounts`).
 
 ## Usage example
 
 ```ts
-import { createStablecoinClient } from '@newrails/stablecoin-core';
+import { createStablecoinClient } from '@newrailsuab/stablecoin-core';
 import { privateKeyToAccount } from 'viem/accounts';
 
 const client = createStablecoinClient({
