@@ -1,0 +1,171 @@
+{
+  "domain": {
+    "chainId": 10143,
+    "domainSeparator": "0xd0f1bd618b9825223184c9b7ec9bc7138e2424dbc4b18e79d6c539843bdc9998",
+    "name": "Newrails Euro",
+    "verifyingContract": "0x1111B3DED9F1fE1801AD4ebeF8E2788183a24111",
+    "version": "1"
+  },
+  "meta": {
+    "contract": "src/Stablecoin.sol:Stablecoin",
+    "description": "EIP-712 test vectors for the Newrails Stablecoin (EURW) SDK. Every signature was verified by executing the corresponding contract call in a forked-local deployment before being written.",
+    "generator": "test/SDKVectors.t.sol (forge test --match-contract SDKVectorsTest)",
+    "signatureEncoding": "packed = r (32 bytes) || s (32 bytes) || v (1 byte)",
+    "timestampAtVerification": "1750000000",
+    "warning": "Signing keys are the public Anvil test mnemonic keys. NEVER use them in production."
+  },
+  "signers": {
+    "authorizer": {
+      "address": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "note": "Anvil test key #0",
+      "privateKey": "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+    },
+    "burner": {
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "note": "Anvil test key #2, granted BURNER_ROLE"
+    },
+    "recipient": {
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "note": "Anvil test key #1 (also permit spender)"
+    }
+  },
+  "typehashes": {
+    "BurnFromWithAuthorization": "0x9c50916b0c593cca2caad5ba49ae9e7d1e9b40b7756c18a87104450f853be2cf",
+    "EIP712Domain": "0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f",
+    "Permit": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9",
+    "ReceiveWithAuthorization": "0xd099cc98ef71107a616c4f0f941f04c322d8e254fe26b3c6668db87aae413de8",
+    "TransferWithAuthorization": "0x7c7c6cdb67a18743f49ec6fa9b35f50d52ed05cbed4cc592e13b44501c1a2267"
+  },
+  "vectors": {
+    "burnFromWithAuthorization/basic": {
+      "digest": "0x900f7b0ec6d7c75597ed66e5a39b29579d260549eec1b50e45d7d8a1a50d97d3",
+      "message": {
+        "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "nonce": "0xee70f99d7e4a4758bb3ae983bac8a09c224ec14c7245ba2f01a013e7bb0dd884",
+        "validAfter": "0",
+        "validBefore": "1893456000",
+        "value": "750000"
+      },
+      "primaryType": "BurnFromWithAuthorization",
+      "signature": {
+        "packed": "0x4539e87089dc016f3053197dc828c234edbe89ccf605753f14a6901626307fca4ae5b271aa34c9feb6fc6ca884df1406b6227a1a541209655dfbce16da4479d31b",
+        "r": "0x4539e87089dc016f3053197dc828c234edbe89ccf605753f14a6901626307fca",
+        "s": "0x4ae5b271aa34c9feb6fc6ca884df1406b6227a1a541209655dfbce16da4479d3",
+        "v": 27
+      },
+      "structHash": "0xa0ceaa9f0860dad46771b2ac02be6d54e71da63f5914857592bff76507ab1a76",
+      "submitFunction": "burnFromWithAuthorization(address,uint256,uint256,uint256,bytes32,bytes)",
+      "submitterConstraint": "caller must hold BURNER_ROLE",
+      "verifiedOnChain": true
+    },
+    "permit/basic": {
+      "digest": "0x7b8b43277355618164651c2800a57e9db63a783d4cbdac75ec89f80ac03a3af7",
+      "message": {
+        "deadline": "1893456000",
+        "nonce": "0",
+        "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "spender": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "value": "5000000"
+      },
+      "primaryType": "Permit",
+      "signature": {
+        "packed": "0x84a8cc3db638abed311eaab71be6e0a4b86907448c09b520aa9083be765833cb339272d81f8d7639cd37b04557bcef896bbd341f29f72dc902d9bd7e4ba1efc91c",
+        "r": "0x84a8cc3db638abed311eaab71be6e0a4b86907448c09b520aa9083be765833cb",
+        "s": "0x339272d81f8d7639cd37b04557bcef896bbd341f29f72dc902d9bd7e4ba1efc9",
+        "v": 28
+      },
+      "structHash": "0x82f1cfc078e076b43c86fe33272387f323dffa9681416563bc0215f3c314929f",
+      "submitFunction": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+      "submitterConstraint": "none (EIP-2612, sequential nonce)",
+      "verifiedOnChain": true
+    },
+    "receiveWithAuthorization/basic": {
+      "digest": "0x1d37f8c21e4db349b95bbec05b8750a6f3d731377f582ef50f413a7ef8ed120b",
+      "message": {
+        "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "nonce": "0x9177a373ba76ad8c4179a71dab3f4b2c84e5fa8310a5f4aee959b2889c084e0b",
+        "to": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "validAfter": "0",
+        "validBefore": "1893456000",
+        "value": "2500000"
+      },
+      "primaryType": "ReceiveWithAuthorization",
+      "signature": {
+        "packed": "0x59c14e0fa3a8f7213627738787f1d4f8c776502b5182516f990a11749068914c740449b1fb3f6957b0f85d3e30cd06830bdc3aaaa4d6f5c3b9d7848f13d88a9a1c",
+        "r": "0x59c14e0fa3a8f7213627738787f1d4f8c776502b5182516f990a11749068914c",
+        "s": "0x740449b1fb3f6957b0f85d3e30cd06830bdc3aaaa4d6f5c3b9d7848f13d88a9a",
+        "v": 28
+      },
+      "structHash": "0xfbd4a6bba383fa782c45e11bf846aaf20fdd67c33c675d32813322f7bb2874ce",
+      "submitFunction": "receiveWithAuthorization(address,address,uint256,uint256,uint256,bytes32,bytes)",
+      "submitterConstraint": "caller must equal `to`",
+      "verifiedOnChain": true
+    },
+    "transferWithAuthorization/basic": {
+      "digest": "0x429727310d86c1f79e14f251e933f0f9ae76a6d3011c2ec420539c29cd1f7b39",
+      "message": {
+        "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "nonce": "0x535f9645efc16618de2ecb97c2cb3cfd099be1780b0a1c6271067c8fb6e5748b",
+        "to": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "validAfter": "0",
+        "validBefore": "1893456000",
+        "value": "1000000"
+      },
+      "primaryType": "TransferWithAuthorization",
+      "signature": {
+        "packed": "0x54e8f9392d62cce5cead4a4d5dcb1feadd55a94b581549d66689a3391b7db4584aa643ce71ef527db8ac6c5762cf3897987bf4866a97b2281d2550d5b92d17871c",
+        "r": "0x54e8f9392d62cce5cead4a4d5dcb1feadd55a94b581549d66689a3391b7db458",
+        "s": "0x4aa643ce71ef527db8ac6c5762cf3897987bf4866a97b2281d2550d5b92d1787",
+        "v": 28
+      },
+      "structHash": "0x89e21faaa899376c747d3447f2fee62dce27fbc8b06daa2a17b16529d60ae76a",
+      "submitFunction": "transferWithAuthorization(address,address,uint256,uint256,uint256,bytes32,bytes)",
+      "submitterConstraint": "anyone may submit",
+      "verifiedOnChain": true
+    },
+    "transferWithAuthorization/large-value-time-window": {
+      "digest": "0xc3b279930cc214e3b359f2b3698c952c76b462cf7deae602f054f82a12eb13c3",
+      "message": {
+        "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "nonce": "0x970baa2fd7f86603b1e4a286c2413c886dde0c4e286ad2392a162e0456c9e2c9",
+        "to": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "validAfter": "1749999000",
+        "validBefore": "1750086400",
+        "value": "123456789012345678901234567890"
+      },
+      "primaryType": "TransferWithAuthorization",
+      "signature": {
+        "packed": "0x51f435f85c89fcb09d6cc9682d27f5c8d99648d22f8aae41b7f4cb7be513b40c4b33464e90b735dfb36ca19901ea502ce334b6702a9299b92fea90294718d2191c",
+        "r": "0x51f435f85c89fcb09d6cc9682d27f5c8d99648d22f8aae41b7f4cb7be513b40c",
+        "s": "0x4b33464e90b735dfb36ca19901ea502ce334b6702a9299b92fea90294718d219",
+        "v": 28
+      },
+      "structHash": "0xc21a33ec88c591b605e428293729a2724384a3233cf749b97ea644a88a176b79",
+      "submitFunction": "transferWithAuthorization(address,address,uint256,uint256,uint256,bytes32,bytes)",
+      "submitterConstraint": "anyone may submit",
+      "verifiedOnChain": true
+    },
+    "transferWithAuthorization/zero-value": {
+      "digest": "0x413c060249f037d6b810389d3493c4c966b9cbd16540023b3bc1946761d1695d",
+      "message": {
+        "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "nonce": "0x55cb8b347a9960c5443ca103726b27a8f616a210f339d630f764fbda035adfe3",
+        "to": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "validAfter": "0",
+        "validBefore": "1893456000",
+        "value": "0"
+      },
+      "primaryType": "TransferWithAuthorization",
+      "signature": {
+        "packed": "0x8ba9f84d8c6f50e3e5bce7228ce56f339f8c4cefc9475b0e559a48a4e57d6129350d8ca1f8a072c45e43274c8b240f241fa5b6b238677c2732c0d62d0f006f341c",
+        "r": "0x8ba9f84d8c6f50e3e5bce7228ce56f339f8c4cefc9475b0e559a48a4e57d6129",
+        "s": "0x350d8ca1f8a072c45e43274c8b240f241fa5b6b238677c2732c0d62d0f006f34",
+        "v": 28
+      },
+      "structHash": "0x8dc328de4905a00f7b1a252bc0cb05a7dcdbe28ad08cd4274fb4a01cebac2508",
+      "submitFunction": "transferWithAuthorization(address,address,uint256,uint256,uint256,bytes32,bytes)",
+      "submitterConstraint": "anyone may submit",
+      "verifiedOnChain": true
+    }
+  }
+}

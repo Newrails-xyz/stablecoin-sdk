@@ -1,0 +1,26 @@
+{
+  "name": "@newrails/stablecoin-core",
+  "version": "0.1.0",
+  "description": "Core SDK for the Newrails Stablecoin (EURW): reads, writes, EIP-712 authorizations, typed errors",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@newrails/stablecoin-contracts": "0.1.0",
+    "viem": "^2.21.0"
+  }
+}
