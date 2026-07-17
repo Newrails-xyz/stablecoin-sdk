@@ -1,5 +1,5 @@
 {
-  "name": "@newrails/stablecoin-contracts",
+  "name": "@newrailsuab/stablecoin-contracts",
   "version": "0.1.0",
   "description": "ABI and multi-chain deployment registry for the Newrails Stablecoin (EURW)",
   "type": "module",
@@ -14,6 +14,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"

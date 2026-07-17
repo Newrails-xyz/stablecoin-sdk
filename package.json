@@ -7,10 +7,14 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
-    "test": "npm run build --workspace @newrails/stablecoin-contracts && npm run test --workspace @newrails/stablecoin-core",
-    "typecheck": "npm run typecheck --workspaces"
+    "test": "npm run build --workspace @newrailsuab/stablecoin-contracts && npm run test --workspace @newrailsuab/stablecoin-core",
+    "typecheck": "npm run typecheck --workspaces",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.31.1",
     "typescript": "^5.6.0",
     "vitest": "^3.0.0"
   }

@@ -14,7 +14,7 @@ import {
   DEPLOYMENTS,
   STABLECOIN_ABI,
   type StablecoinDeployment,
-} from '@newrails/stablecoin-contracts';
+} from '@newrailsuab/stablecoin-contracts';
 
 import {
   buildBurnAuthorizationTypedData,
